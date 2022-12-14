@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import { StyleSheet, Text, View,StatusBar } from 'react-native';
+import { useFonts } from "expo-font";
+import { LogBox } from 'react-native';
+import Navigation from './src/navigation/navigation';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  LogBox.ignoreLogs(['Warning: ...']);
+  LogBox.ignoreAllLogs();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  const [loaded] = useFonts({
+    Bold:require("./src/assets/fonts/SFProDisplay-Bold.ttf"),
+    SemiBold:require("./src/assets/fonts/SFProDisplay-Semibold.ttf"),
+    Medium:require("./src/assets/fonts/SFProDisplay-Medium.ttf"),
+    Regular:require("./src/assets/fonts/SFProDisplay-Regular.ttf"),
+ });
+ if (!loaded) {
+   return false;
+ }
+  return(
+
+    <View style={{flex:1,}}>
+<StatusBar barStyle = "light-content" hidden = {false} backgroundColor = "#000" />
+      <Navigation />
+    </View>
+  )
+}
