@@ -9,6 +9,8 @@ import CompaniesScreen from "../screens/CompaniesScreen";
 import ReportsScreen from "../screens/ReportsScreen";
 import TasksScreen from "../screens/TasksScreen";
 import ProjectsScreen from "../screens/ProjectsScreen";
+import TargetsScreen from "../screens/TargetsScreen";
+import SettingsScreen from "../screens/SettingsScreen";
 
 
 const WIDTH = Dimensions.get("window").width;
@@ -30,6 +32,9 @@ function Navigation() {
         <Stack.Screen name="ReportsScreen" component={ReportsScreen} />
         <Stack.Screen name="TasksScreen" component={TasksScreen} />
         <Stack.Screen name="ProjectsScreen" component={ProjectsScreen} />
+        <Stack.Screen name="TargetsScreen" component={TargetsScreen} />
+        <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
+    
       </Stack.Navigator>
     </NavigationContainer>
   );

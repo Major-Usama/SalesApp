@@ -8,6 +8,9 @@ import {
   UsersIcon,
   BuildingOfficeIcon,
   DocumentIcon,
+  DocumentDuplicateIcon,
+  ChartPieIcon,
+  AdjustmentsVerticalIcon,
 } from "react-native-heroicons/outline";
 import TaskItem from "../components/TaskItem";
 import ReportItem from "../components/ReportItem";
@@ -76,7 +79,32 @@ export default function HomeScreen({ navigation }) {
 
         {/* FooterListContainer */}
         <View style={styles.footerListMainContainer}>
-          <FooterList />
+          <FooterList
+            Icon={DocumentDuplicateIcon}
+            onpress={() => navigation.navigate("ReportsScreen")}
+            title="Rapporten"
+            subtitle="Bekijk alle rapporten."
+            color="#6D6D6D"
+            fillcolor="#000000"
+          />
+
+          <FooterList
+            Icon={ChartPieIcon}
+            onpress={() => navigation.navigate("TargetsScreen")}
+            title="Targets"
+            subtitle="Bekijk uw 5 targets."
+            color="#6D6D6D"
+            fillcolor="#000000"
+          />
+
+          <FooterList
+            Icon={AdjustmentsVerticalIcon}
+            onpress={() => navigation.navigate("SettingsScreen")}
+            title="Instellingen"
+            subtitle="Pas uw instellingen hier aan."
+            color="#6D6D6D"
+            fillcolor="#6D6D6D"
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
