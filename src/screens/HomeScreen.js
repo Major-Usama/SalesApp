@@ -1,4 +1,11 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+} from "react-native";
 import React from "react";
 import { RFValue } from "react-native-responsive-fontsize";
 import TopMenuItem from "../components/TopMenuItem";
@@ -16,8 +23,50 @@ import TaskItem from "../components/TaskItem";
 import ReportItem from "../components/ReportItem";
 import FooterList from "../components/FooterList";
 export default function HomeScreen({ navigation }) {
+  const DATA = [
+    {
+      id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+      title: "First Item",
+      type: "active",
+    },
+    {
+      id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+      title: "Second Item",
+      type: "nonactive",
+    },
+    {
+      id: "58694a0f-3da1-471f-bd96-145571e29d72",
+      title: "Third Item",
+      type: "active",
+    },
+  ];
+
+  const renderItem = ({ item }) => {
+    if (item.type === "active") {
+      return (
+        <TaskItem
+          Icon={CalendarDaysIcon}
+          color="#FF9D9D"
+          title="TAAK"
+          subtitle={`Bellen met Jan${"\n"}over Auto's`}
+          btnText="Gisteren"
+        />
+      );
+    } else {
+      return (
+        <TaskItem
+          Icon={CalendarDaysIcon}
+          color="#C5FBFF"
+          title="TAAK"
+          subtitle={`Bellen met Jan${"\n"}over Auto's`}
+          btnText="Morgen"
+        />
+      );
+    }
+  };
+
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrolview}
@@ -48,21 +97,17 @@ export default function HomeScreen({ navigation }) {
 
         {/* Task this container */}
         <Text style={styles.taskthisweekText}>Taken deze week</Text>
-        <View style={styles.taskThisWeekContainer}>
-          <TaskItem
-            Icon={CalendarDaysIcon}
-            color="#FF9D9D"
-            title="TAAK"
-            subtitle={`Bellen met Jan${"\n"}over Auto's`}
-            btnText="Gisteren"
-          />
 
-          <TaskItem
-            Icon={CalendarDaysIcon}
-            color="#C5FBFF"
-            title="TAAK"
-            subtitle={`Bellen met Jan${"\n"}over Auto's`}
-            btnText="Morgen"
+        <View>
+          <FlatList
+            contentContainerStyle={{
+              marginLeft: RFValue(10),
+              paddingRight: RFValue(20),
+            }}
+            horizontal
+            data={DATA}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id}
           />
         </View>
 
@@ -107,7 +152,7 @@ export default function HomeScreen({ navigation }) {
           />
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -137,11 +182,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     marginBottom: RFValue(20),
   },
-  taskThisWeekContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-evenly",
-  },
+  taskThisWeekContainer: {},
   reportItemContainer: {
     marginTop: RFValue(10),
   },

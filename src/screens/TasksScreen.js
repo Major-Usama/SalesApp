@@ -66,12 +66,13 @@ export default function TasksScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Header showplus="none" />
-      <ScrollView
-        contentContainerStyle={{ paddingBottom: RFValue(100) }}
+    <View style={styles.container}>
+       <ScrollView
+        contentContainerStyle={{ paddingBottom: RFValue(50) }}
         showsVerticalScrollIndicator={false}
       >
+      <Header showplus="none" />
+     
         {/* Screen Title */}
         <View>
           <Text style={styles.screenTitle}>Taken</Text>
@@ -96,7 +97,7 @@ export default function TasksScreen() {
           />
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 

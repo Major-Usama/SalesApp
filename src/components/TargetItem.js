@@ -102,6 +102,8 @@ const styles = StyleSheet.create({
     fontFamily: "Regular",
     fontSize: RFValue(12),
     marginTop: RFValue(5),
+    lineHeight:20,
+    letterSpacing:-0.25
   },
   progressBarContainer: {
     marginTop: RFValue(15),

@@ -52,12 +52,13 @@ import {
       </View>
     );
     return (
-      <SafeAreaView style={styles.container}>
-        <Header showplus="flex" />
-        <ScrollView
-          contentContainerStyle={{ paddingBottom: RFValue(100) }}
+      <View style={styles.container}>
+          <ScrollView
+          contentContainerStyle={{ paddingBottom: RFValue(50) }}
           showsVerticalScrollIndicator={false}
         >
+        <Header showplus="flex" />
+      
           {/* Screen Title */}
           <View>
             <Text style={styles.screenTitle}>Bedrijven</Text>
@@ -85,7 +86,7 @@ import {
             />
           </View>
         </ScrollView>
-      </SafeAreaView>
+      </View>
     );
   }
   

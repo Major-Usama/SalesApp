@@ -21,12 +21,13 @@ import FooterList from "../components/FooterList";
 
 export default function SettingsScreen() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Header showplus="none" />
-      <ScrollView
-        contentContainerStyle={{ paddingBottom: RFValue(100) }}
+    <View style={styles.container}>
+       <ScrollView
+        contentContainerStyle={{ paddingBottom: RFValue(50) }}
         showsVerticalScrollIndicator={false}
       >
+      <Header showplus="none" />
+     
         {/* Screen Title */}
         <View>
           <Text style={styles.screenTitle}>John Doe</Text>
@@ -96,7 +97,7 @@ export default function SettingsScreen() {
           />
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 

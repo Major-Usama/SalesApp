@@ -52,12 +52,13 @@ export default function ReportsScreen() {
     </View>
   );
   return (
-    <SafeAreaView style={styles.container}>
-      <Header showplus="none" />
-      <ScrollView
-        contentContainerStyle={{ paddingBottom: RFValue(100) }}
+    <View style={styles.container}>
+       <ScrollView
+        contentContainerStyle={{ paddingBottom: RFValue(50) }}
         showsVerticalScrollIndicator={false}
       >
+      <Header showplus="none" />
+     
         {/* Screen Title */}
         <View>
           <Text style={styles.screenTitle}>Rapporten</Text>
@@ -85,14 +86,14 @@ export default function ReportsScreen() {
           />
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000",
+    backgroundColor: "#000000",
   },
   screenTitle: {
     fontSize: RFValue(30),

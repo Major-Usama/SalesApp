@@ -11,7 +11,7 @@ import Header from "../components/Header";
 import { RFValue } from "react-native-responsive-fontsize";
 import SearchInput from "../components/SearchInput";
 
-import { UserIcon, DocumentIcon } from "react-native-heroicons/outline";
+import { UserIcon, } from "react-native-heroicons/outline";
 import ReportItem from "../components/ReportItem";
 const DATA = [
   {
@@ -36,11 +36,12 @@ const DATA = [
   },
 ];
 
-export default function ContactsScreen() {
+export default function ContactsScreen({navigation}) {
   const [search, setSearch] = useState("");
   const renderItem = ({ item }) => (
     <View style={styles.reportItemContainer}>
       <ReportItem
+       onpress={()=>navigation.navigate('ContactDetailScreen')}
         Icon={UserIcon}
         color="#C4FBFF"
         title="OPENSTAAND RAPPORT"
@@ -52,12 +53,13 @@ export default function ContactsScreen() {
     </View>
   );
   return (
-    <SafeAreaView style={styles.container}>
-      <Header showplus="flex" />
-      <ScrollView
-        contentContainerStyle={{ paddingBottom: RFValue(100) }}
+    <View style={styles.container}>
+       <ScrollView
+        contentContainerStyle={{ paddingBottom: RFValue(50) }}
         showsVerticalScrollIndicator={false}
       >
+      <Header showplus="flex" />
+     
         {/* Screen Title */}
         <View>
           <Text style={styles.screenTitle}>Contacten</Text>
@@ -85,7 +87,7 @@ export default function ContactsScreen() {
           />
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 

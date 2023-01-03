@@ -17,10 +17,17 @@ export default function App() {
  if (!loaded) {
    return false;
  }
+ const STATUS_BAR_HEIGHT = Platform.OS === "ios" ? 40 : StatusBar.currentHeight;
   return(
 
     <View style={{flex:1,}}>
-<StatusBar barStyle = "light-content" hidden = {false} backgroundColor = "#000" />
+ <View style={{ height: STATUS_BAR_HEIGHT, backgroundColor: "#000" }}>
+          <StatusBar
+            translucent
+            backgroundColor="#000"
+            barStyle="light-content"
+          />
+        </View>
       <Navigation />
     </View>
   )

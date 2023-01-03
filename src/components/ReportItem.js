@@ -1,11 +1,13 @@
-import { Dimensions, StyleSheet, Text, View } from "react-native";
+import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { RFValue } from "react-native-responsive-fontsize";
 
 const WIDTH = Dimensions.get("window").width;
 export default function ReportItem(props) {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+    onPress={props.onpress}
+    style={styles.container}>
       <View style={styles.itemHeader}>
         <props.Icon color={props.color} fill="black" size={24} />
         <View
@@ -30,7 +32,7 @@ export default function ReportItem(props) {
 
        </View>
       
-    </View>
+    </TouchableOpacity>
   );
 }
 

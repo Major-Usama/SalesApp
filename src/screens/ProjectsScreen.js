@@ -18,12 +18,13 @@ import TaskItem from "../components/TaskItem";
   export default function ProjectsScreen() {
     const [search, setSearch] = useState("");
     return (
-      <SafeAreaView style={styles.container}>
-        <Header showplus="none" />
-        <ScrollView
-          contentContainerStyle={{ paddingBottom: RFValue(100) }}
+      <View style={styles.container}>
+         <ScrollView
+          contentContainerStyle={{ paddingBottom: RFValue(50) }}
           showsVerticalScrollIndicator={false}
         >
+        <Header showplus="none" />
+       
           {/* Screen Title */}
           <View>
             <Text style={styles.screenTitle}>Projecten</Text>
@@ -110,7 +111,7 @@ import TaskItem from "../components/TaskItem";
         </View>
         
         </ScrollView>
-      </SafeAreaView>
+      </View>
     );
   }
   

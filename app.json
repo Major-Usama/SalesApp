@@ -1,11 +1,13 @@
 {
   "expo": {
+    
     "name": "SalesApp",
     "slug": "SalesApp",
-    "version": "1.0.0",
+    "version": "1.0.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "privacy":"public",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -19,7 +21,9 @@
     ],
     "ios": {
       "supportsTablet": true
+      
     },
+    
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
