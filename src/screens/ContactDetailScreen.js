@@ -1,28 +1,30 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import Header from '../components/Header'
-import { RFValue } from 'react-native-responsive-fontsize'
-import TopMenuItem from '../components/TopMenuItem'
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import React from "react";
+import Header from "../components/Header";
+import { RFValue } from "react-native-responsive-fontsize";
 
 import {
   MapPinIcon,
   PhoneArrowUpRightIcon,
   EnvelopeIcon,
-  BuildingOfficeIcon
-  } from "react-native-heroicons/solid";
-import DetailMenuItem from '../components/DetailMenuItem'
-import DetailDescription from '../components/DetailDescription'
+  BuildingOfficeIcon,
+} from "react-native-heroicons/solid";
+import DetailMenuItem from "../components/DetailMenuItem";
+import DetailDescription from "../components/DetailDescription";
+import DetailFooter from "../components/DetailFooter";
 
 export default function ContactDetailScreen() {
   return (
     <View style={styles.container}>
-      <Header showplus="flex" />
+      <ScrollView
+        contentContainerStyle={{ paddingBottom: 50 }}
+        showsVerticalScrollIndicator={false}
+      >
+        <Header showplus="flex" />
 
-      <View>
+        <View>
           <Text style={styles.screenTitle}>John Doe</Text>
-          <Text style={styles.screenSubtitle}>
-          1 week geleden
-          </Text>
+          <Text style={styles.screenSubtitle}>1 week geleden</Text>
         </View>
 
         <View style={styles.homeScreenTopMenu}>
@@ -44,29 +46,29 @@ export default function ContactDetailScreen() {
           />
         </View>
 
-
         <View style={styles.detailMainContainer}>
-
-        <DetailDescription />
-
+          <DetailDescription />
         </View>
+        <View>
+          <DetailFooter />
+        </View>
+      </ScrollView>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
-container:
-{
-    flex:1,
-    backgroundColor:'#000'
-},
-screenTitle: {
+  container: {
+    flex: 1,
+    backgroundColor: "#000",
+  },
+  screenTitle: {
     fontSize: RFValue(30),
     fontFamily: "Medium",
     color: "#fff",
     marginHorizontal: RFValue(10),
     marginTop: RFValue(18),
-    textAlign:'center'
+    textAlign: "center",
   },
   screenSubtitle: {
     fontSize: RFValue(15),
@@ -74,7 +76,7 @@ screenTitle: {
     color: "#6D6D6D",
     marginHorizontal: RFValue(10),
     marginTop: 2,
-    textAlign:'center'
+    textAlign: "center",
   },
   homeScreenTopMenu: {
     flexDirection: "row",
@@ -82,9 +84,7 @@ screenTitle: {
     justifyContent: "space-around",
     marginTop: RFValue(30),
   },
-  detailMainContainer:
-  {
-    marginTop:RFValue(50)
-  }
-    
-})
+  detailMainContainer: {
+    marginTop: RFValue(50),
+  },
+});
