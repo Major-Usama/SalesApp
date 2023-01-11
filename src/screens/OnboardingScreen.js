@@ -56,7 +56,7 @@ const OnboardingScreen = ({navigation}) => {
             </Text>
           </View>
 
-          <View>
+          {/* <View>
             {page === 1 && (
               <Pressable
                 style={styles.button}
@@ -65,7 +65,7 @@ const OnboardingScreen = ({navigation}) => {
                 <Text style={styles.btnText}>Volgende</Text>
               </Pressable>
             )}
-          </View>
+          </View> */}
         </View>
         <View style={styles.page}>
           <View style={styles.contentContainer}>
@@ -81,7 +81,7 @@ const OnboardingScreen = ({navigation}) => {
             </Text>
           </View>
 
-          <View>
+          {/* <View>
             {page === 2 && (
               <View>
                 <Pressable
@@ -92,7 +92,7 @@ const OnboardingScreen = ({navigation}) => {
                 </Pressable>
               </View>
             )}
-          </View>
+          </View> */}
         </View>
         <View style={styles.page}>
           <View style={styles.contentContainer}>
