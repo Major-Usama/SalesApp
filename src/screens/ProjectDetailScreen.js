@@ -1,21 +1,20 @@
-import { ScrollView, StyleSheet, Text, View,FlatList } from "react-native";
+import { ScrollView, StyleSheet, Text, View, FlatList } from "react-native";
 import React from "react";
 import Header from "../components/Header";
 import { RFValue } from "react-native-responsive-fontsize";
 
 import {
-  MapPinIcon,
-  PhoneArrowUpRightIcon,
-  EnvelopeIcon,
   BuildingOfficeIcon,
+  UserPlusIcon,
+  UserIcon,
+  PencilIcon,
+  TrashIcon,
 } from "react-native-heroicons/solid";
 import DetailMenuItem from "../components/DetailMenuItem";
 import DetailDescription from "../components/DetailDescription";
 import DetailFooter from "../components/DetailFooter";
 
-export default function ContactDetailScreen({navigation}) {
-
-
+export default function ProjectDetailScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <ScrollView
@@ -23,30 +22,31 @@ export default function ContactDetailScreen({navigation}) {
         showsVerticalScrollIndicator={false}
       >
         <Header
-        onpress={()=>navigation.navigate('SingleChoiceScreen')}
-        showplus="flex" />
+          onpress={() => navigation.navigate("SingleChoiceScreen")}
+          showplus="flex"
+        />
 
         <View>
-          <Text style={styles.screenTitle}>John Doe</Text>
+          <Text style={styles.screenTitle}>Containers</Text>
           <Text style={styles.screenSubtitle}>1 week geleden</Text>
         </View>
 
         <View style={styles.homeScreenTopMenu}>
           <DetailMenuItem
             // onpress={() => navigation.navigate("TasksScreen")}
-            Icon={MapPinIcon}
+            Icon={UserIcon}
           />
           <DetailMenuItem
             // onpress={() => navigation.navigate("ProjectsScreen")}
-            Icon={PhoneArrowUpRightIcon}
+            Icon={BuildingOfficeIcon}
           />
           <DetailMenuItem
             // onpress={() => navigation.navigate("ContactsScreen")}
-            Icon={EnvelopeIcon}
+            Icon={PencilIcon}
           />
           <DetailMenuItem
             // onpress={() => navigation.navigate("CompaniesScreen")}
-            Icon={BuildingOfficeIcon}
+            Icon={TrashIcon}
           />
         </View>
 

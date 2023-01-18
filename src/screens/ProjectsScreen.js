@@ -15,7 +15,7 @@ import {
 import TaskItem from "../components/TaskItem";
 
   
-  export default function ProjectsScreen() {
+  export default function ProjectsScreen({navigation}) {
     const [search, setSearch] = useState("");
     return (
       <View style={styles.container}>
@@ -43,6 +43,7 @@ import TaskItem from "../components/TaskItem";
         <Text style={styles.taskthisweekText}>Prospect</Text>
         <View style={styles.taskThisWeekContainer}>
           <TaskItem
+          onpress={()=>navigation.navigate('ProjectDetailScreen')}
             Icon={ChartBarSquareIcon}
             color="#FF9D9D"
             title="PROJECT"
@@ -51,6 +52,7 @@ import TaskItem from "../components/TaskItem";
           />
 
           <TaskItem
+           onpress={()=>navigation.navigate('ProjectDetailScreen')}
             Icon={ChartBarSquareIcon}
             color="#C5FBFF"
             title="TAAK"
@@ -64,6 +66,7 @@ import TaskItem from "../components/TaskItem";
         <View style={styles.taskThisWeekContainer}>
 
         <TaskItem
+         onpress={()=>navigation.navigate('ProjectDetailScreen')}
             Icon={ChartBarSquareIcon}
             color="#C5FBFF"
             title="TAAK"
@@ -73,6 +76,7 @@ import TaskItem from "../components/TaskItem";
           />
 
           <TaskItem
+           onpress={()=>navigation.navigate('ProjectDetailScreen')}
             Icon={ChartBarSquareIcon}
             color="#FF9D9D"
             title="PROJECT"
@@ -90,6 +94,7 @@ import TaskItem from "../components/TaskItem";
         <View style={styles.taskThisWeekContainer}>
 
         <TaskItem
+         onpress={()=>navigation.navigate('ProjectDetailScreen')}
             Icon={ChartBarSquareIcon}
             color="#C5FBFF"
             title="TAAK"
@@ -99,6 +104,7 @@ import TaskItem from "../components/TaskItem";
           />
 
           <TaskItem
+           onpress={()=>navigation.navigate('ProjectDetailScreen')}
             Icon={ChartBarSquareIcon}
             color="#FF9D9D"
             title="PROJECT"

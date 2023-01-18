@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View,FlatList } from "react-native";
+import { ScrollView, StyleSheet, Text, View, FlatList } from "react-native";
 import React from "react";
 import Header from "../components/Header";
 import { RFValue } from "react-native-responsive-fontsize";
@@ -8,14 +8,13 @@ import {
   PhoneArrowUpRightIcon,
   EnvelopeIcon,
   BuildingOfficeIcon,
+  UserPlusIcon,
 } from "react-native-heroicons/solid";
 import DetailMenuItem from "../components/DetailMenuItem";
 import DetailDescription from "../components/DetailDescription";
 import DetailFooter from "../components/DetailFooter";
 
-export default function ContactDetailScreen({navigation}) {
-
-
+export default function CompanyDetailScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <ScrollView
@@ -23,11 +22,12 @@ export default function ContactDetailScreen({navigation}) {
         showsVerticalScrollIndicator={false}
       >
         <Header
-        onpress={()=>navigation.navigate('SingleChoiceScreen')}
-        showplus="flex" />
+          onpress={() => navigation.navigate("SingleChoiceScreen")}
+          showplus="flex"
+        />
 
         <View>
-          <Text style={styles.screenTitle}>John Doe</Text>
+          <Text style={styles.screenTitle}>Walters INC</Text>
           <Text style={styles.screenSubtitle}>1 week geleden</Text>
         </View>
 
@@ -46,7 +46,7 @@ export default function ContactDetailScreen({navigation}) {
           />
           <DetailMenuItem
             // onpress={() => navigation.navigate("CompaniesScreen")}
-            Icon={BuildingOfficeIcon}
+            Icon={UserPlusIcon}
           />
         </View>
 

@@ -17,11 +17,11 @@ export default function Header(props) {
         <ChevronLeftIcon color="#fff" fill="black" size={32} />
       </Pressable>
 
-      <View
-      
+      <Pressable
+      onPress={props.onpress}
       style={{ ...styles.backButton,display: props.showplus }}>
         <PlusCircleIcon color="#fff" fill="black" size={32} />
-      </View>
+      </Pressable>
     </View>
   );
 }

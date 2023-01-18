@@ -1,11 +1,13 @@
-import { Dimensions, StyleSheet, Text, View } from "react-native";
+import { Dimensions, Pressable, StyleSheet, Text, View } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
 import React from "react";
 const WIDTH = Dimensions.get("window").width;
 export default function TaskItem(props) {
   return (
-    <View style={styles.container}>
+    <Pressable
+    onPress={props.onpress}
+    style={styles.container}>
       <props.Icon color={props.color} fill="black" size={24} />
 
       <Text style={styles.title}>{props.title}</Text>
@@ -15,7 +17,7 @@ export default function TaskItem(props) {
       <View style={{ ...styles.buttonContainer, backgroundColor: props.color }}>
         <Text style={styles.btnText}>{props.btnText}</Text>
       </View>
-    </View>
+    </Pressable>
   );
 }
 

@@ -58,7 +58,10 @@ export default function ContactsScreen({navigation}) {
         contentContainerStyle={{ paddingBottom: RFValue(50) }}
         showsVerticalScrollIndicator={false}
       >
-      <Header showplus="flex" />
+      <Header 
+      onpress={()=>navigation.navigate('AddContactScreen')}
+     
+     showplus="flex" />
      
         {/* Screen Title */}
         <View>

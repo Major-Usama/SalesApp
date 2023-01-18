@@ -5,7 +5,7 @@ const WIDTH = Dimensions.get("window").width;
 
 export default function DetailBox(props) {
   return (
-    <View style={styles.container}>
+    <View style={{ ...styles.container }}>
       <Text style={styles.headerText}>{props.header}</Text>
 
       <Text style={styles.title}>{props.title}</Text>
@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#111111",
     borderRadius: 15,
     marginTop: 4,
+    marginHorizontal: 4,
   },
   headerText: {
     fontSize: RFValue(9),
@@ -51,5 +52,6 @@ const styles = StyleSheet.create({
     color: "#C4FBFF",
     fontSize: RFValue(14),
     fontFamily: "SemiBold",
+    marginTop: 5,
   },
 });

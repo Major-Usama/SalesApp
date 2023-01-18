@@ -1,13 +1,17 @@
-import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React from "react";
 import { RFValue } from "react-native-responsive-fontsize";
 
 const WIDTH = Dimensions.get("window").width;
 export default function ReportItem(props) {
   return (
-    <TouchableOpacity
-    onPress={props.onpress}
-    style={styles.container}>
+    <TouchableOpacity onPress={props.onpress} style={styles.container}>
       <View style={styles.itemHeader}>
         <props.Icon color={props.color} fill="black" size={24} />
         <View
@@ -16,22 +20,18 @@ export default function ReportItem(props) {
           <Text style={styles.btnText}>{props.btnText}</Text>
         </View>
       </View>
-       
-       <View style={styles.itemFooter}>
-        
-        <View >
-        <Text style={styles.title}>{props.title}</Text>
-      <Text style={styles.subtitle}>{props.subtitle}</Text>
+
+      <View style={styles.itemFooter}>
+        <View>
+          <Text style={styles.title}>{props.title}</Text>
+          <Text style={styles.subtitle}>{props.subtitle}</Text>
         </View>
 
         <View>
-        <Text style={styles.title}>{props.latestcontact}</Text>
-      <Text style={styles.subtitle}>{props.weekagotext}</Text>
+          <Text style={styles.title}>{props.latestcontact}</Text>
+          <Text style={styles.subtitle}>{props.weekagotext}</Text>
         </View>
-
-
-       </View>
-      
+      </View>
     </TouchableOpacity>
   );
 }
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#111111",
     alignSelf: "center",
     borderRadius: 15,
-    marginBottom:RFValue(10)
+    marginBottom: RFValue(10),
   },
   buttonContainer: {
     width: RFValue(70),
@@ -70,20 +70,18 @@ const styles = StyleSheet.create({
     fontFamily: "Bold",
     fontSize: RFValue(9),
 
-    letterSpacing:1,
+    letterSpacing: 1,
   },
   subtitle: {
     fontFamily: "Medium",
     fontSize: RFValue(15),
     color: "#fff",
-    marginTop:RFValue(5)
-   
+    marginTop: RFValue(5),
   },
-  itemFooter:
-  {
-    flexDirection:'row',
-    alignItems:'center',
-    justifyContent:"space-between",
-    marginTop:RFValue(18)
-  }
+  itemFooter: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: RFValue(18),
+  },
 });
